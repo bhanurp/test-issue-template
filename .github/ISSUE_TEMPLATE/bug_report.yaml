@@ -1,10 +1,7 @@
 name: Bug Report
 description: File a bug report.
 title: "[Bug]: "
-labels: ["bug", "triage"]
-projects: ["octo-org/1", "octo-org/44"]
-assignees:
-  - octocat
+labels: ["bug", "triage", "needs-triage", "documentation"]
 body:
   - type: markdown
     attributes:
@@ -13,52 +10,70 @@ body:
   - type: input
     id: contact
     attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
+      label: Plugin Name
+      description: Name of the plugin issue is seen?
+      placeholder: ex. artifactCleanup.groovy
     validations:
-      required: false
-  - type: textarea
-    id: what-happened
+      required: true
+  - type: input
+    id: plugin-path
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: Plugin Path?
+      description: Path of plugin from root of repository?
+      placeholder: ex. cleanup/artifactCleanup.groovy
     validations:
       required: true
   - type: dropdown
-    id: version
+    id: isDeprecated
     attributes:
-      label: Version
-      description: What version of our software are you running?
+      label: IsDeprecated
+      description: Is the plugin in deprecated-plugins folder(deprecated-plugins)?
       options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
+        - Yes (Default)
+        - No
       default: 0
     validations:
       required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
   - type: textarea
-    id: logs
+    id: config
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      label: config/properties
+      description: Please copy and paste any relevant config.json or properties.
       render: shell
-  - type: checkboxes
-    id: terms
+  - type: input
+    id: rtVersion
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com). 
+      label: Artifactory Version?
+      description: Version of Artifactory in Semantic format?
+      placeholder: ex. 7.XX.X
+    validations:
+      required: true
+  - type: textarea
+    id: alternative
+    attributes:
+      label: Alternatives Explored
+      description: Have you considered any alternative solutions or workarounds out of box in Artifactory?
+      render: shell
+  - type: textarea
+    id: issue
+    attributes:
+      label: Issue Summary
+      description: Summary of the Issue you are facing?
+      render: shell
+  - type: dropdown
+    id: selfFix
+    attributes:
+      label: Can you fix it?
+      description: Can you fix the issue by yourself?
       options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+        - Yes (Default)
+        - No
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Expected Solution
+      description: What is the solution expected?
+      render: shell
