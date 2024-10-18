@@ -2,10 +2,10 @@
 PluginName:
 
 ## Path to plugin from root of repository
-Path to Plugin:
+Path to Plugin: eg: 
 
-## Is plugin Deprecated?
-Is the path under deprecated plugins:
+## Is the path under deprecated plugins
+Is plugin Deprecated? [Yes/No]
 
 ## Provide Config/Properties used along with plugin leave blank if none
 Config/Properties:
