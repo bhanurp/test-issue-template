@@ -1,0 +1,33 @@
+name: Feature Request
+description: No New Feature requests are being taken at this time.
+title: "[Feature Request]: "
+labels: ["feature-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Are there any alternatives explored?
+      description: Let us know if there are any alternatives/workarounds explored.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: What is the feature request?
+      description: What is the use case you are looking which is not available in artifactory?
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: rtVersion
+    attributes:
+      label: Artifactory Version?
+      description: Version of Artifactory in Semantic format?
+      placeholder: ex. 7.XX.X
+    validations:
+      required: true

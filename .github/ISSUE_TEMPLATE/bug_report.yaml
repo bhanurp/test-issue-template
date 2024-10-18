@@ -40,6 +40,8 @@ body:
       label: config/properties
       description: Please copy and paste any relevant config.json or properties.
       render: shell
+    validations:
+      required: true
   - type: input
     id: rtVersion
     attributes:
@@ -54,12 +56,16 @@ body:
       label: Alternatives Explored
       description: Have you considered any alternative solutions or workarounds out of box in Artifactory?
       render: shell
+    validations:
+      required: true
   - type: textarea
     id: issue
     attributes:
       label: Issue Summary
       description: Summary of the Issue you are facing?
       render: shell
+    validations:
+      required: true
   - type: dropdown
     id: selfFix
     attributes:
@@ -77,3 +83,5 @@ body:
       label: Expected Solution
       description: What is the solution expected?
       render: shell
+    validations:
+      required: true
