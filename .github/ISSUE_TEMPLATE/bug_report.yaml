@@ -29,7 +29,7 @@ body:
       label: IsDeprecated
       description: Is the plugin in deprecated-plugins folder(deprecated-plugins)?
       options:
-        - Yes (Default)
+        - Yes
         - No
       default: 0
     validations:
@@ -72,7 +72,7 @@ body:
       label: Can you fix it?
       description: Can you fix the issue by yourself?
       options:
-        - Yes (Default)
+        - Yes
         - No
       default: 0
     validations:
